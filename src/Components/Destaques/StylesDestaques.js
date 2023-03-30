@@ -18,6 +18,7 @@ export const DestaquesCardsContainer = styled.section`
   max-width: 1200px;
   margin: 0 auto;
 `;
+
 export const DestaquesTitulo = styled.h1`
   font-size: 4rem;
   margin-bottom: 40px;

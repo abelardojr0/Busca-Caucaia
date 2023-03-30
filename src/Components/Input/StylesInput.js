@@ -28,7 +28,6 @@ export const LabelInput = styled.label`
 
 export const InputComponent = styled.input`
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
   background-color: transparent;
   width: 100%;

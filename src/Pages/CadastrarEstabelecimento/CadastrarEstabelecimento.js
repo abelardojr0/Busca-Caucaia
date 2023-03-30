@@ -7,6 +7,10 @@ import {
   ContainerFormulario,
   TituloFormulario,
 } from "../Cadastro/StylesCadastro";
+import {
+  CadastrarEstabelecimentoFotoModelo,
+  CadastrarEstabelecimentoInputFoto,
+} from "./StylesCadastrarEstabelecimento";
 
 const CadastrarEstabelecimento = () => {
   const [categoria, setCategoria] = React.useState();
@@ -15,6 +19,7 @@ const CadastrarEstabelecimento = () => {
   const [cep, setCep] = React.useState();
   const [numero, setNumero] = React.useState();
   const [imagem, setImagem] = React.useState();
+  const [file, setFile] = React.useState();
   const [produtos, setProdutos] = React.useState();
   const [observacao, setObservacao] = React.useState();
   const rota = "http://localhost:5000";
@@ -25,13 +30,12 @@ const CadastrarEstabelecimento = () => {
     const formData = new FormData();
     formData.append("categoria", categoria);
     formData.append("nome", nome);
-    formData.append("imagem", imagem);
+    formData.append("imagem", file);
     formData.append("telefone", telefone);
     formData.append("cep", cep);
     formData.append("numero", numero);
     formData.append("observacao", observacao);
     formData.append("produtos", produtos);
-    console.log(imagem);
     axios
       .post(rota + "/inserirEstabelecimento", formData, {
         headers: {
@@ -45,19 +49,17 @@ const CadastrarEstabelecimento = () => {
         console.log(error);
       });
   }
+
   function handleImageUpload(event) {
     const file = event.target.files[0];
-    setImagem(file);
-  }
-  // function handleImageUpload(event) {
-  //   const file = event.target.files[0];
-  //   const reader = new FileReader();
+    setFile(file);
+    const reader = new FileReader();
 
-  //   reader.readAsDataURL(file);
-  //   reader.onloadend = () => {
-  //     setImagem(reader.result);
-  //   };
-  // }
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImagem(reader.result);
+    };
+  }
   return (
     <>
       <Header />
@@ -115,8 +117,18 @@ const CadastrarEstabelecimento = () => {
           setDados={setNumero}
           dados={numero}
         />
-        <input type="file" onChange={handleImageUpload} />
-        {imagem && <img src={imagem} alt="imagem" />}
+        <CadastrarEstabelecimentoInputFoto
+          type="file"
+          name="file"
+          id="file"
+          onChange={handleImageUpload}
+        />
+        {imagem && (
+          <CadastrarEstabelecimentoFotoModelo
+            src={imagem}
+            alt="imagem do estabelecimento"
+          />
+        )}
         {/* <input
           tipo={"file"}
           nome={"imagem"}

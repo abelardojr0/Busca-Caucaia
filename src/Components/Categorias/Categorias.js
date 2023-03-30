@@ -28,7 +28,11 @@ const Categorias = () => {
         <CategoriasComponent>
           {categorias &&
             categorias.map((categoria) => (
-              <Card nome={categoria[1]} imagem={categoria[2]} />
+              <Card
+                id={categoria[0]}
+                nome={categoria[1]}
+                imagem={categoria[2]}
+              />
             ))}
         </CategoriasComponent>
       </CategoriasContainer>

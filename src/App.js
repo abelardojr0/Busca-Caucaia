@@ -3,6 +3,7 @@ import "./App.css";
 import { GlobalStyles } from "./GlobalStyles";
 import CadastrarEstabelecimento from "./Pages/CadastrarEstabelecimento/CadastrarEstabelecimento";
 import Cadastro from "./Pages/Cadastro/Cadastro";
+import Categoria from "./Pages/Categoria/Categoria";
 import Home from "./Pages/Home/Home";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/categoria/:id" element={<Categoria />} />
           <Route
             path="/cadastrarEstabelecimento"
             element={<CadastrarEstabelecimento />}

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardEstabelecimentoComponent = styled.div`
-  width: 250px;
+  min-width: 250px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -9,9 +9,9 @@ export const CardEstabelecimentoComponent = styled.div`
   flex-direction: column;
   background-color: black;
   cursor: pointer;
-  &:hover {
+  /* &:hover {
     transform: scale(1.05);
-  }
+  } */
 `;
 
 export const CardEstabelecimentoImagem = styled.img`
