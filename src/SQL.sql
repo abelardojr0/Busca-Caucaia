@@ -2,15 +2,18 @@ CREATE TABLE estabelecimento (
 	id INT GENERATED ALWAYS AS IDENTITY,
 	nome VARCHAR(255),
 	imagem TEXT,
-	telefone VARCHAR(255),
-	nota VARCHAR(255),
-	diasFuncionamento VARCHAR(255),
-	horarioFuncionamento VARCHAR(255),
 	cep VARCHAR(45),
+	endereco VARCHAR(255),
+	bairro VARCHAR(255),
 	numero VARCHAR(45),
-	observacao VARCHAR(255),
+	telefone VARCHAR(255),
+	inicioSemana VARCHAR(255),
+	finalSemana VARCHAR(255),
+	horarioAbertura VARCHAR(255),
+	horarioFechamento VARCHAR(255),
+	descricao VARCHAR(255),
 	produtos VARCHAR(255),
-	categoria_id INT REFERENCES categoria (id) 
+	id_categoria INT REFERENCES categoria (id),
 
 	PRIMARY KEY (id)
 )

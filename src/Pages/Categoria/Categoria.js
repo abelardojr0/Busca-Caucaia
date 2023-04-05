@@ -7,7 +7,7 @@ import ListaCards from "../../Components/ListaCards/ListaCards";
 
 const Categoria = () => {
   const { id } = useParams();
-  const rota = "http://localhost:5000";
+  const rota = "https://busca-caucaia-gules.vercel.app";
   const [lista, setLista] = React.useState([]);
   React.useEffect(() => {
     axios

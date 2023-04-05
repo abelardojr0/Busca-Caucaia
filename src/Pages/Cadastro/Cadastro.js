@@ -29,7 +29,7 @@ const Cadastro = () => {
   const [msgErroSenhaFraca, setMsgErroSenhaFraca] = React.useState(false);
   const [loginStatus, setLoginStatus] = React.useState(false);
   const [carregando, setCarregando] = React.useState(false);
-  const rota = "http://localhost:5000";
+  const rota = "https://busca-caucaia-gules.vercel.app";
 
   function finalizar(e) {
     e.preventDefault();

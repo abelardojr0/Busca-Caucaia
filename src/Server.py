@@ -19,7 +19,7 @@ try:
 
     app_key = 'e69bpyyy541vhxq'
     app_secret = 'g6vxv8d91osdlye'
-    access_token = 'sl.Bbhyesr0DIerBUxJ1MSIXAT3qjk9Hr2vZ6aRwubcQz7pG4kaWNcpyMvK0mBre8-TJOgcFyDcTg_g63cVkz1D9Hd-Gc8cVcTjmtdGS16Myfl_WcIoxHFcHH2bUg9x51U-T-Q0qimFzXdp'
+    access_token = 'sl.Bbo4dRq0MbhVGsbaW4CFy2zxtTogcLlTIPFueZ0kem8zMqNlbCHk0soAvf4b-7GukQJu0kwARFHNS6Qo-Frn3m23yjR-jYs2oPTikQqdgxb2XqKwSamLPFMM9fqPAZK75-UbAJky7HYY'
     client = dropbox.Dropbox(access_token)
     
     app = Flask(__name__)

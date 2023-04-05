@@ -9,7 +9,8 @@ import {
 
 const Categorias = () => {
   const [categorias, setCategorias] = React.useState([]);
-  const rota = "http://localhost:5000";
+  const rota = "https://busca-caucaia-gules.vercel.app";
+
   React.useEffect(() => {
     axios
       .get(rota + "/categorias")

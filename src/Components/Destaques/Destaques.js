@@ -9,9 +9,10 @@ import {
 
 const Destaques = () => {
   const [mercados, setMercados] = React.useState([]);
+  const rota = "https://busca-caucaia-gules.vercel.app";
   React.useEffect(() => {
     axios
-      .get("http://localhost:5000/mercados")
+      .get(rota + "/mercados")
       .then((response) => {
         setMercados(response.data);
       })
