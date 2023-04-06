@@ -30,6 +30,9 @@ const CadastrarEstabelecimento = () => {
   const [fimHorario, setFimHorario] = React.useState();
   const [produtos, setProdutos] = React.useState();
   const [descricao, setDescricao] = React.useState();
+  const [facebook, setFacebook] = React.useState();
+  const [instagram, setInstagram] = React.useState();
+  const [whatsApp, setWhatsApp] = React.useState();
 
   const diasSemana = [
     "Segunda",
@@ -96,6 +99,10 @@ const CadastrarEstabelecimento = () => {
     formData.append("fimHorario", fimHorario);
     formData.append("descricao", descricao);
     formData.append("produtos", produtos);
+    formData.append("facebook", facebook);
+    formData.append("instagram", instagram);
+    formData.append("whatsApp", `https://wa.me/${whatsApp}`);
+
     axios
       .post(rota + "/inserirEstabelecimento", formData, {
         headers: {
@@ -257,7 +264,7 @@ const CadastrarEstabelecimento = () => {
 
         <Input
           htmlFor={"descricao"}
-          texto={"Descrição *"}
+          texto={"Descrição "}
           tipo={"text"}
           nome={"descricao"}
           id={"descricao"}
@@ -268,13 +275,44 @@ const CadastrarEstabelecimento = () => {
 
         <Input
           htmlFor={"produtos"}
-          texto={"Produtos *"}
+          texto={"Produtos "}
           tipo={"text"}
           nome={"produtos"}
           id={"produtos"}
           required
           setDados={setProdutos}
           dados={produtos}
+        />
+
+        <Input
+          htmlFor={"facebook"}
+          texto={"Facebook "}
+          tipo={"text"}
+          nome={"facebook"}
+          id={"facebook"}
+          required
+          setDados={setFacebook}
+          dados={facebook}
+        />
+        <Input
+          htmlFor={"instagram"}
+          texto={"Instagram "}
+          tipo={"text"}
+          nome={"instagram"}
+          id={"instagram"}
+          required
+          setDados={setInstagram}
+          dados={instagram}
+        />
+        <Input
+          htmlFor={"whatsApp"}
+          texto={"WhatsApp "}
+          tipo={"text"}
+          nome={"whatsApp"}
+          id={"whatsApp"}
+          required
+          setDados={setWhatsApp}
+          dados={whatsApp}
         />
         <Botao>Cadastrar</Botao>
       </ContainerFormulario>

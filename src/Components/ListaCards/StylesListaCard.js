@@ -93,3 +93,18 @@ export const ListaCardTitulo = styled.h1`
   margin-top: 120px;
   text-align: center;
 `;
+
+export const ListaCardAberto = styled.span`
+  color: green;
+  position: relative;
+  text-transform: uppercase;
+  &::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: -25px;
+    background-color: green;
+    border-radius: 50%;
+  }
+`;
